@@ -1,6 +1,6 @@
 # XYZ Project
 - Here lies a project for continuing my coding skills and passion.
-- Today's thought is to create a sales tracker
+- This will be a survey for TrueCoders
 - Let's get started!
 
 # Barebones React/TypeScript/Express/Sass Boilerplate
