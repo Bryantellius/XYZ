@@ -15,9 +15,9 @@ const QuestionCard: React.FC<IQuestionCardProps> = (props) => {
 };
 
 interface IQuestionCardProps {
-  QuestionNumber: number;
-  Question: string;
-  answerType: string;
+  QuestionNumber?: number;
+  Question?: string;
+  answerType?: string;
 }
 
 export default QuestionCard;

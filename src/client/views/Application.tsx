@@ -16,11 +16,6 @@ const Application: React.FC<IApplicationProps> = () => {
         answerType={"text"}
       />
       <QuestionCard QuestionNumber={3} Question={"Age"} answerType={"number"} />
-      <QuestionCard
-        QuestionNumber={4}
-        Question={"Why are you interested in software development?"}
-        answerType={"text"}
-      />
     </main>
   );
 };
