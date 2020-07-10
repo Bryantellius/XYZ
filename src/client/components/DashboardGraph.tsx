@@ -11,9 +11,9 @@ const DashboardGraph: React.FC<IDashboardGraphProps> = (props) => {
               <h6 className="text-center">Calls</h6>
               <div className="progress my-2">
                 <div
-                  className="progress-bar w-75"
+                  className="progress-bar w-100"
                   role="progressbar"
-                  aria-valuenow={75}
+                  aria-valuenow={100}
                   aria-valuemin={0}
                   aria-valuemax={100}
                 ></div>
@@ -95,9 +95,9 @@ const DashboardGraph: React.FC<IDashboardGraphProps> = (props) => {
               <h6 className="text-center">Calls</h6>
               <div className="progress my-2">
                 <div
-                  className="progress-bar w-75"
+                  className="progress-bar w-100"
                   role="progressbar"
-                  aria-valuenow={75}
+                  aria-valuenow={100}
                   aria-valuemin={0}
                   aria-valuemax={100}
                 ></div>
