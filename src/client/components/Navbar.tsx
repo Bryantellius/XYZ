@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar: React.FC<INavbarProps> = () => {
   return (
     <main className="container-fluid p-2 shadow-lg d-flex">
-      <h3 className="col-3 text-danger text-left">ONEPLUS</h3>
+      <h3 className="col-3 text-danger text-left">+ONEPLUS</h3>
       <div className="col-6 d-flex justify-content-between align-items-center">
         <NavLink to="/phones" className="nav-link text-dark">
           Phones <span className="badge badge-dark">New</span>
