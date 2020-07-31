@@ -38,20 +38,31 @@ $theme-colors: (
 
 #HBI {
     position: relative;
+    width: fit-content;
     top: 20%;
     left: 20%;
 }
 
 #HOPEI {
     position: relative;
+    width: fit-content;
     top: 10%;
     left: 10%;
 }
 
 #HOPEPI {
     position: relative;
+    width: fit-content;
     top: 40%;
     left: 40%;
+}
+
+.homeFour {
+    height: 500px;
+    border: solid white thick;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
