@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./views/Home";
-import Admin from "./views/Admin";
+import Contact from "./views/Contact";
 import Navbar from "./components/Navbar";
 
 const App: React.FC<IAppProps> = () => {
@@ -10,7 +10,7 @@ const App: React.FC<IAppProps> = () => {
     <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/admin" component={Admin} />
+        <Route path="/contact" component={Contact} />
       </Switch>
     </BrowserRouter>
   );
