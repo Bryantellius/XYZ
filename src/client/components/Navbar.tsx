@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 const Navbar: React.FC<INavbarProps> = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
-      <NavLink to="/home" className="navbar-brand">
-        XpressTiming
+      <NavLink to="/" className="navbar-brand">
+        <img id="homeImage" src="https://xpresstiming.com/images/LOGO's/XprLogo2.png" alt="XpressTiming Logo" />
       </NavLink>
       <button
         className="navbar-toggler"
