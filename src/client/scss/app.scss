@@ -14,8 +14,17 @@ main {
 
 #tcLogo {
     position: relative;
-    width: 50%;
+    width: 25%;
     height: auto;
+}
+
+#contentDiv {
+    height: 90vh;
+    width: auto;
+}
+
+.progress {
+    
 }
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

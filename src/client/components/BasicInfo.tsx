@@ -4,7 +4,7 @@ const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
   const changePage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     props.updateBar(100);
-    props.method.setProgress(100);
+    props.methods.setProgress(100);
   };
 
   return (
@@ -17,7 +17,7 @@ const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
           id="candidateName"
           placeholder="John Doe"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            props.method.setName(e.target.value)
+            props.methods.setName(e.target.value)
           }
           required
         />
@@ -30,7 +30,7 @@ const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
           id="candidateNumber"
           placeholder="(111) 222-3333"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            props.method.setNumber(e.target.value)
+            props.methods.setNumber(e.target.value)
           }
           required
         />
@@ -44,7 +44,7 @@ const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
           placeholder="name@example.com"
           value={props.status.email}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            props.method.setEmail(e.target.value)
+            props.methods.setEmail(e.target.value)
           }
           required
         />
@@ -55,7 +55,7 @@ const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
           className="form-control"
           id="exampleFormControlSelect1"
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            props.method.setClassDate(e.target.value)
+            props.methods.setClassDate(e.target.value)
           }
           required
         >
@@ -84,8 +84,7 @@ const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
 
 interface IBasicInfoProps {
   status: any;
-  method: any;
-  updateBar: any;
+  methods: any;
 }
 
 export default BasicInfo;
