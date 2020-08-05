@@ -3,7 +3,6 @@ $theme-colors: (
 );
 
 #root {
-<<<<<<< HEAD
     background-color: #767D92;
 }
 
@@ -17,21 +16,6 @@ main {
     position: relative;
     width: 50%;
     height: auto;
-=======
-    width: auto;
-    height: auto;
-    overflow-x: none;
-}
-
-#navBar {
-    height: 6rem;
-    width: 100%;
-}
-
-#homeImage {
-    width: auto;
-    height: 5rem;
->>>>>>> refs/remotes/origin/master
 }
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
