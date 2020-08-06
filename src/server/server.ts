@@ -16,10 +16,6 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(router);
 
-app.get("*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../public"));
-});
-
 app.use(
   (
     err: Error,
@@ -31,6 +27,10 @@ app.use(
     res.json({ errors: { err: err.message } });
   }
 );
+
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
 
 const port = process.env.PORT || config.port;
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
