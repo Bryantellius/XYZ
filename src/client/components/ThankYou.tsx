@@ -7,7 +7,7 @@ const ThankYou: React.FC<IThankYouProps> = (props: any) => {
 
   React.useEffect(() => {
     if (props.name.length == 0) {
-      history.push("/signup");
+      history.push("/");
     }
   }, []);
 

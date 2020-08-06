@@ -5,7 +5,7 @@ import config from "../../config";
 const router = express.Router();
 
 // DO NOT PUBLISH UNTIL YOU FIX ENV VARS
-const stripe = new Stripe(config.stripe.stripe_sk, {
+const stripe = new Stripe(process.env.SECRET_KEY || config.stripe.stripe_sk, {
   apiVersion: "2020-03-02",
   typescript: true,
 });
