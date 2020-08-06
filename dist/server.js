@@ -86,18 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/server/config/development.ts":
-/*!******************************************!*\
-  !*** ./src/server/config/development.ts ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar dotenv = __webpack_require__(/*! dotenv */ \"dotenv\");\r\nvar envFound = dotenv.config();\r\nif (!envFound) {\r\n    throw new Error(\"Can't find .env!\");\r\n}\r\nexports.default = {\r\n    port: 3000,\r\n    stripe: {\r\n        stripe_pk: \"pk_test_xYC9RbQVRXGE1CeOyvjFaRyE000c79B9ft\",\r\n        stripe_sk: \"sk_test_KC7dwCzf8h0FR6C0i4kIsJI100vfkD7DTh\",\r\n    },\r\n};\r\n\n\n//# sourceURL=webpack:///./src/server/config/development.ts?");
-
-/***/ }),
-
 /***/ "./src/server/config/index.ts":
 /*!************************************!*\
   !*** ./src/server/config/index.ts ***!
@@ -106,7 +94,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nva
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.default = __webpack_require__(/*! ./development */ \"./src/server/config/development.ts\").default;\r\n\n\n//# sourceURL=webpack:///./src/server/config/index.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar dotenv = __webpack_require__(/*! dotenv */ \"dotenv\");\r\nvar envFound = dotenv.config();\r\nif (!envFound) {\r\n    throw new Error(\"Can't find .env!\");\r\n}\r\nexports.default = {\r\n    port: parseInt(process.env.PORT, 10),\r\n    stripe: {\r\n        stripe_pk: process.env.PUBLISHABLE_KEY,\r\n        stripe_sk: process.env.SECRET_KEY,\r\n    },\r\n};\r\n\n\n//# sourceURL=webpack:///./src/server/config/index.ts?");
 
 /***/ }),
 
@@ -154,7 +142,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nva
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express = __webpack_require__(/*! express */ \"express\");\r\nvar routes_1 = __webpack_require__(/*! ./routes */ \"./src/server/routes/index.ts\");\r\nvar path = __webpack_require__(/*! path */ \"path\");\r\nvar config_1 = __webpack_require__(/*! ./config */ \"./src/server/config/index.ts\");\r\nvar morgan = __webpack_require__(/*! morgan */ \"morgan\");\r\nvar cors = __webpack_require__(/*! cors */ \"cors\");\r\nvar dotenv = __webpack_require__(/*! dotenv */ \"dotenv\");\r\ndotenv.config();\r\nvar app = express();\r\napp.use(cors());\r\napp.use(express.static(\"public\"));\r\napp.use(express.json());\r\napp.use(morgan(\"dev\"));\r\napp.use(routes_1.default);\r\napp.use(function (err, req, res, next) {\r\n    res.status(err.status || 500);\r\n    res.json({ errors: { err: err.message } });\r\n});\r\napp.get(\"*\", function (req, res, next) {\r\n    res.sendFile(path.join(__dirname, \"../public/index.html\"));\r\n});\r\nvar port = config_1.default.port;\r\napp.listen(port, function () { return console.log(\"Server listening on port: \" + port); });\r\n\n\n//# sourceURL=webpack:///./src/server/server.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar express = __webpack_require__(/*! express */ \"express\");\r\nvar routes_1 = __webpack_require__(/*! ./routes */ \"./src/server/routes/index.ts\");\r\nvar path = __webpack_require__(/*! path */ \"path\");\r\nvar config_1 = __webpack_require__(/*! ./config */ \"./src/server/config/index.ts\");\r\nvar morgan = __webpack_require__(/*! morgan */ \"morgan\");\r\nvar cors = __webpack_require__(/*! cors */ \"cors\");\r\nvar app = express();\r\napp.use(cors());\r\napp.use(express.static(\"public\"));\r\napp.use(express.json());\r\napp.use(morgan(\"dev\"));\r\napp.use(routes_1.default);\r\napp.use(function (err, req, res, next) {\r\n    res.status(err.status || 500);\r\n    res.json({ errors: { err: err.message } });\r\n});\r\napp.get(\"*\", function (req, res, next) {\r\n    res.sendFile(path.join(__dirname, \"../public/index.html\"));\r\n});\r\nvar port = config_1.default.port;\r\napp.listen(port, function () { return console.log(\"Server listening on port: \" + port); });\r\n\n\n//# sourceURL=webpack:///./src/server/server.ts?");
 
 /***/ }),
 
