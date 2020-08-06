@@ -33,5 +33,5 @@ app.use(
   }
 );
 
-const port = config.port || 3000;
+const port = config.port;
 app.listen(port, () => console.log(`Server listening on port: ${port}`));

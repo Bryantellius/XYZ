@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled from "@emotion/styled";
 import axios from "axios";
 
 import {
@@ -13,13 +12,34 @@ import { useHistory } from "react-router-dom";
 const CheckoutForm = (props: any) => {
   const [isProcessing, setProcessingTo] = React.useState<boolean>(false);
   const [checkoutError, setCheckoutError] = React.useState<any>();
+  const [succeeded, setSucceeded] = React.useState(false);
+  const [error, setError] = React.useState(null);
+  const [disabled, setDisabled] = React.useState(true);
 
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
 
+  const handleChange = async (event: any) => {
+    // Listen for changes in the CardElement
+    // and display any errors as the customer types their card details
+    setDisabled(event.empty);
+    setError(event.error ? event.error.message : "");
+  };
+
   const handleFormSubmit = async (ev: any) => {
     ev.preventDefault();
+
+    if (props.use.name == "") {
+      document.getElementById("candidateName").style.borderColor = "red";
+      alert("Please enter your name.");
+      return;
+    }
+    if (props.use.email == "") {
+      document.getElementById("candidateEmail").style.borderColor = "red";
+      alert("Please enter your email.");
+      return;
+    }
 
     const billingDetails = {
       name: props.use.name,
@@ -46,8 +66,16 @@ const CheckoutForm = (props: any) => {
       payment_method: paymentMethodReq.paymentMethod.id,
     });
 
-    // Redirect function HERE
-    history.push("/signup_completed");
+    if (confirmCardPayment.error) {
+      setError(`Payment failed ${confirmCardPayment.error.message}`);
+      setProcessingTo(false);
+    } else {
+      setError(null);
+      setProcessingTo(false);
+      setSucceeded(true);
+      // Redirect function HERE
+      history.push("/signup_completed");
+    }
   };
 
   const cardElementOptions = {
@@ -73,11 +101,15 @@ const CheckoutForm = (props: any) => {
       <CardElement
         options={cardElementOptions}
         className="border rounded p-2 my-3"
+        onChange={handleChange}
       />
       {checkoutError && (
         <div className="alert alert-danger">{checkoutError}</div>
       )}
-      <button className="btn btn-lg btn-primary my-3" disabled={isProcessing}>
+      <button
+        className="btn btn-lg btn-primary my-3"
+        disabled={isProcessing || disabled || succeeded}
+      >
         {isProcessing ? "Processing..." : `Pay $500`}
       </button>
     </form>

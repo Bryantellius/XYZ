@@ -1,10 +1,8 @@
 import * as React from "react";
 import BasicInfo from "../components/BasicInfo";
-import ClassInfo from "../components/ClassInfo";
 import ThankYou from "../components/ThankYou";
-import ProgressBar from "../components/ProgressBar";
 import DisplayLogo from "../components/DisplayLogo";
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import GetStarted from "../components/GetStarted";
 
 const Home: React.FC<IHomeProps> = () => {
@@ -15,10 +13,6 @@ const Home: React.FC<IHomeProps> = () => {
   const [classDate, setClassDate] = React.useState<string>(
     "Scrum Mastery Course"
   );
-
-  const changeProgressBar = (num: number) => {
-    document.getElementById("progressBar").style.width = num.toString() + "%";
-  };
 
   return (
     <main className="container d-flex justify-content-center align-items-center">

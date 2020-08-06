@@ -27,7 +27,7 @@ const GetStarted: React.FC<IGetStartedProps> = (props: any) => {
               className="btn btn-lg btn-primary d-block w-100"
               onClick={changePage}
             >
-              Get Started
+              Sign Up
             </button>
           </div>
         </div>

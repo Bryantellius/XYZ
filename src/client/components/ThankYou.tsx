@@ -1,7 +1,16 @@
 import * as React from "react";
 import Confetti from "react-confetti";
+import { useHistory } from "react-router-dom";
 
 const ThankYou: React.FC<IThankYouProps> = (props: any) => {
+  const history = useHistory();
+
+  React.useEffect(() => {
+    if (props.name.length == 0) {
+      history.push("/signup");
+    }
+  }, []);
+
   return (
     <>
       <Confetti

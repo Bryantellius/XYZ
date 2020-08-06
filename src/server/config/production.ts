@@ -9,7 +9,7 @@ if (!envFound) {
 export default {
   port: parseInt(process.env.PORT, 10),
   stripe: {
-    stripe_pk: process.env.STRIPE_PK,
-    stripe_sk: process.env.STRIPE_SK,
+    stripe_pk: process.env.PUBLISHABLE_KEY,
+    stripe_sk: process.env.SECRET_KEY,
   },
 };
