@@ -1,5 +1,7 @@
 import * as React from "react";
+
 const { default: axios } = require("axios");
+
 
 import {
   CardElement,
@@ -8,6 +10,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import { useHistory } from "react-router-dom";
+
 
 const CheckoutForm = (props: any) => {
   const [isProcessing, setProcessingTo] = React.useState<boolean>(false);

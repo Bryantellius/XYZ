@@ -5,8 +5,11 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import config from "../../server/config";
 import { useHistory } from "react-router-dom";
+import * as dotenv from "dotenv";
 
-const promise: any = loadStripe(process.env.PUBLISHABLE_KEY);
+dotenv.config();
+
+const promise: any = loadStripe(config.stripe.stripe_pk);
 
 const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
   const history = useHistory();
