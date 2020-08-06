@@ -61,7 +61,6 @@ const clientConfig = {
     output: {
         filename: 'app.js',
         path: path.resolve(__dirname, 'public/js'),
-        publicPath: '/'
     }
 };
 
