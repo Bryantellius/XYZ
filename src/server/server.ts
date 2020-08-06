@@ -4,12 +4,10 @@ import * as path from "path";
 import { Error } from "./utils/types";
 import config from "./config";
 import * as morgan from "morgan";
-import * as helmet from "helmet";
 import * as cors from "cors";
 
 const app = express();
 
-app.use(helmet());
 app.use(cors());
 
 app.use(express.static("./public"));
