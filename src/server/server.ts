@@ -1,12 +1,21 @@
 import * as express from "express";
-import apiRouter from "./routes";
+import router from "./routes";
 import * as path from "path";
 import { Error } from "./utils/types";
+import config from "./config";
+import * as morgan from "morgan";
+import * as helmet from "helmet";
+import * as cors from "cors";
 
 const app = express();
 
+app.use(helmet());
+app.use(cors());
 app.use(express.static("public"));
-app.use(apiRouter);
+app.use(express.json());
+
+app.use(morgan("dev"));
+app.use(router);
 
 app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
@@ -24,5 +33,5 @@ app.use(
   }
 );
 
-const port = process.env.PORT || 3000;
+const port = config.port || 3000;
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
