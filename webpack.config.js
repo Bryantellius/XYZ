@@ -25,7 +25,8 @@ const serverConfig = {
     },
     target: 'node',
     node: {
-        __dirname: false
+        __dirname: false,
+        fs: 'empty'
     },
     externals: [nodeExternals()]
 };
