@@ -10,7 +10,13 @@ const app = express();
 
 app.use(cors());
 
-app.use(express.static("public"));
+const options = {
+  setHeaders: function (res: express.Response, path: any, stat: any) {
+    res.set("type", "application/javascript");
+  },
+};
+
+app.use(express.static("public", options));
 app.use(express.json());
 
 app.use(morgan("dev"));
