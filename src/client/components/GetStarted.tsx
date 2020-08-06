@@ -6,7 +6,7 @@ const GetStarted: React.FC<IGetStartedProps> = (props: any) => {
 
   const changePage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    history.push("/payment_info");
+    history.replace("/payment_info");
   };
 
   return (
