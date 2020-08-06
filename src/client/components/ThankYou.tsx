@@ -20,14 +20,14 @@ const ThankYou: React.FC<IThankYouProps> = (props: any) => {
       />
       <div id="successMain" className="container my-2 col-md-6">
         <div className="mb-3">
-          <div className="alert alert-success">Purchase Successful</div>
-          <h2>You're a rockstar, {props.name}!</h2>
+          <div className="alert alert-success">Payment Successful</div>
+          <h2>You rock, {props.name}!</h2>
           <p>
             You have signed up for the <b>{props.classDate}</b>.
             <br />
             <br />
             Be on the look out for an email with class Zoom link. We encourage
-            you to checkout Steve Hallman on LinkedIn and GitHub!
+            you to check out Steve Hallman on LinkedIn and GitHub!
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import * as React from "react";
+import Main from "./Main";
 import BasicInfo from "../components/BasicInfo";
 import ThankYou from "../components/ThankYou";
 import DisplayLogo from "../components/DisplayLogo";
@@ -23,6 +24,9 @@ const Home: React.FC<IHomeProps> = () => {
         <DisplayLogo />
         <BrowserRouter>
           <Switch>
+            <Route exact path="/">
+              <Main />
+            </Route>
             <Route path="/signup">
               <GetStarted />
             </Route>

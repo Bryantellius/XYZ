@@ -3,12 +3,13 @@ import ReactTooltip from "react-tooltip";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import config from "../../server/config";
 
-const promise = loadStripe("pk_test_5kZ8Jqphhgho6KtqLWCQjeap001MKHsi38");
+const promise = loadStripe(config.stripe.stripe_pk);
 
 const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
   return (
-    <div className="input-group my-3 row col-md-8 col-sm-10 p-4 needs-validation">
+    <div className="input-group my-3 row col-md-8 col-sm-10 p-4 needs-validation shadow-sm rounded">
       <div className="form-row col-md-8 mx-auto my-3">
         <label className="h6">
           <span>Name</span>

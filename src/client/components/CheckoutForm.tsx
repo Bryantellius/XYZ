@@ -13,18 +13,23 @@ const CheckoutForm = (props: any) => {
   const [isProcessing, setProcessingTo] = React.useState<boolean>(false);
   const [checkoutError, setCheckoutError] = React.useState<any>();
   const [succeeded, setSucceeded] = React.useState(false);
-  const [error, setError] = React.useState(null);
   const [disabled, setDisabled] = React.useState(true);
 
   const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
 
+  React.useEffect(() => {
+    if (props.use.email.length > 0) {
+      history.push("/signup");
+    }
+  }, []);
+
   const handleChange = async (event: any) => {
     // Listen for changes in the CardElement
     // and display any errors as the customer types their card details
     setDisabled(event.empty);
-    setError(event.error ? event.error.message : "");
+    setCheckoutError(event.error ? event.error.message : "");
   };
 
   const handleFormSubmit = async (ev: any) => {
@@ -67,10 +72,11 @@ const CheckoutForm = (props: any) => {
     });
 
     if (confirmCardPayment.error) {
-      setError(`Payment failed ${confirmCardPayment.error.message}`);
+      setCheckoutError(`Payment failed ${confirmCardPayment.error.message}`);
       setProcessingTo(false);
+      console.log(`Payment failed ${confirmCardPayment.error.message}`);
     } else {
-      setError(null);
+      setCheckoutError(null);
       setProcessingTo(false);
       setSucceeded(true);
       // Redirect function HERE

@@ -10,19 +10,19 @@ const GetStarted: React.FC<IGetStartedProps> = (props: any) => {
   };
 
   return (
-    <div className="col-md-10 mx-auto d-flex flex-column justify-content-between">
+    <div className="col-md-10 mx-auto d-flex flex-column justify-content-between shadow-sm rounded">
       <h1 className="text-dark text-center mb-3">Scrum Mastery Course</h1>
       <div className="welcomeContent row justify-content-start align-items-center">
         <div className="welcomeVideo col-md-6 align-self-start my-2 w-100">
           <iframe
             src="https://player.vimeo.com/video/445081038"
             width="100%"
-            height="auto"
+            height="200px"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <div className="my-5 mx-auto col-md-6">
+          <div className="my-5 mx-auto col-md-12">
             <button
               className="btn btn-lg btn-primary d-block w-100"
               onClick={changePage}
@@ -49,7 +49,7 @@ const GetStarted: React.FC<IGetStartedProps> = (props: any) => {
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
-              <span>Taught By: Steve Hallman</span>
+              <span className="p-2">Taught By: Steve Hallman</span>
             </li>
             <li className="list-group-item d-flex flex-column justify-content-start align-items-center">
               <svg
@@ -69,7 +69,7 @@ const GetStarted: React.FC<IGetStartedProps> = (props: any) => {
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <span>
+              <span className="p-2">
                 Date: August 15th and 22nd, 2020 (Sessions from 8:00 AM – 12:00
                 PM and 2:00 PM – 4:00 PM each day)
               </span>
@@ -90,7 +90,7 @@ const GetStarted: React.FC<IGetStartedProps> = (props: any) => {
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
-              <span>Location: Virtual Through Zoom</span>
+              <span className="p-2">Location: Virtual Through Zoom</span>
             </li>
             <li className="list-group-item d-flex flex-column justify-content-start align-items-center">
               <svg
@@ -107,7 +107,7 @@ const GetStarted: React.FC<IGetStartedProps> = (props: any) => {
               >
                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
               </svg>
-              <span>
+              <span className="p-2">
                 This 2-day, 6-hours per day course will guide participants
                 through the world of Scrum Mastery. Participants will gain
                 hands-on knowledge and will grow their ability to embrace Scrum
