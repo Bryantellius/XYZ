@@ -33,5 +33,5 @@ app.get("*", (req, res, next) => {
 });
 
 
-const port = config.port;
+const port = config.port || 3000;
 app.listen(port, () => console.log(`Server listening on port: ${port}`));
