@@ -1,5 +1,5 @@
 import * as React from "react";
-import axios from "axios";
+const { default: axios } = require("axios");
 
 import {
   CardElement,
@@ -37,12 +37,12 @@ const CheckoutForm = (props: any) => {
 
     if (props.use.name == "") {
       document.getElementById("candidateName").style.borderColor = "red";
-      alert("Please enter your name.");
+      setCheckoutError("Please provide your name.");
       return;
     }
     if (props.use.email == "") {
       document.getElementById("candidateEmail").style.borderColor = "red";
-      alert("Please enter your email.");
+      setCheckoutError("Please enter your email.");
       return;
     }
 

@@ -5,7 +5,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import config from "../../server/config";
 
-const promise = loadStripe(config.stripe.stripe_pk);
+const promise: any = loadStripe(config.stripe.stripe_pk);
 
 const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
   return (
