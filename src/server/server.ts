@@ -17,7 +17,7 @@ app.use(morgan("dev"));
 app.use(router);
 
 app.get("*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+  res.sendFile(path.join(__dirname, "../public"));
 });
 
 app.use(
