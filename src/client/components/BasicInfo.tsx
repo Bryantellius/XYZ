@@ -4,10 +4,19 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import config from "../../server/config";
+import { useHistory } from "react-router-dom";
 
-const promise: any = loadStripe(process.env.PUBLISHABLE_KEY || config.stripe.stripe_pk);
+const promise: any = loadStripe(process.env.PUBLISHABLE_KEY);
 
 const BasicInfo: React.FC<IBasicInfoProps> = (props: any) => {
+  const history = useHistory();
+
+  React.useEffect(() => {
+    if (props.status.email.length > 0) {
+      history.push("/");
+    }
+  }, []);
+
   return (
     <div className="input-group my-3 row col-md-8 col-sm-10 p-4 needs-validation shadow-sm rounded">
       <div className="form-row col-md-8 mx-auto my-3">

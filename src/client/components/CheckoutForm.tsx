@@ -19,11 +19,6 @@ const CheckoutForm = (props: any) => {
   const elements = useElements();
   const history = useHistory();
 
-  React.useEffect(() => {
-    if (props.use.email.length > 0) {
-      history.push("/signup");
-    }
-  }, []);
 
   const handleChange = async (event: any) => {
     // Listen for changes in the CardElement
