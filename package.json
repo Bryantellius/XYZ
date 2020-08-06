@@ -1,6 +1,7 @@
 {
   "name": "react-express-node-typescript",
   "version": "1.0.0",
+  "engines": {"node": "14.x"},
   "description": "TrueCoders Course Select",
   "main": "dist/server.js",
   "scripts": {
